@@ -19,7 +19,7 @@
           <p>The first example is from <a href="http://api.jquery.com/load/">jQuery API</a></p>
           <p id="feeds"></p>
           <script>
-          $( "#feeds" ).load( "feeds.php", { limit: 5 }, function() {
+          $( "#feeds" ).load( "http://digital.usfsp.edu/events/slidefeed.rss", { limit: 5 }, function() {
             alert( "The last 5 entries in the feed have been loaded" );
           });  
           </script>
