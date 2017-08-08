@@ -17,6 +17,12 @@
       <p>This contains baseline code for generic Proof-of-Concept to be used in widgets specifically for LibGuides.  Code will not work here in GitHub,  Must Be Used at Same Source</p>
         <section>
           <p>The first example is from <a href="http://api.jquery.com/load/">jQuery API</a></p>
+          <p id="feeds"></p>
+          <script>
+          $( "#feeds" ).load( "feeds.php", { limit: 5 }, function() {
+            alert( "The last 5 entries in the feed have been loaded" );
+          });  
+          </script>
           
           <p><a href="http://www.htmlgoodies.com/beyond/javascript/stips/displaying-feed-content-using-jquery.html">Another example, good for xml breakout</a></p> 
           <script>
