@@ -47,14 +47,11 @@
           <script>
           var maxImages = 5,    feedUrl = "http://digital.usfsp.edu/recent.rss?id=72179079@N00&lang=en-us&format=json&jsoncallback=?";
 $.getJSON(feedUrl, function(data) {    // process feed    $.each(data.items, function(i, item) {        if (i < maxImages) {            var imgsrc = item.media.m; // thumbnail                // full-sized image                fullImg = imgsrc.replace(/_m.jpg/gi, "_z.jpg");            $("<img />")                .attr("src", imgsrc) // change "imgsrc" to "fullImg" as desired                .appendTo("#slider")                .wrap('<li><a href="' + item.link + '" target="_blank" /></li>');        }    });
-    // initialize the slider    $('#slider').anythingSlider();
-         
-});
-          
-          </script>        
-        
-        
+    // initialize the slider    $('#slider').anythingSlider();      
+   });        
+   </script>        
+
         </section>     
-        
+        </article>
   </body>
 </html> 
