@@ -124,7 +124,11 @@ $(".searchbox_sc .nav-tabs li").click(function () {  $(this).parent().find("li"
            count_type = "owner";            
            break;         
              }//if response.errCode 200
-                                    jQuery.each(response.data, function(idx, elt) {           jQuery("#s-lg-index-" + count_type + "-" + elt.id).show();           jQuery("#s-lg-index-" + count_type + "-count-" + elt.id).html(elt.count);                                    });                                } else {                                    // Show error message.
+         jQuery.each(response.data, function(idx, elt) {           
+         jQuery("#s-lg-index-" + count_type + "-" + elt.id).show();           
+         jQuery("#s-lg-index-" + count_type + "-count-" + elt.id).html(elt.count);                                    
+            });//function idx elt                                
+          } else {// Show error message.
                                 }                            },                            error: function (jqXHR, textStatus, errorThrown) {                                // error                                alert("Oops, sorry! Something unexpected happened: " + errorThrown + " \n\nThat might not mean much to you, but it probably does to the Springy Techs...you can let them know at support@springshare.com.");                            }                        });                    }
                     springSpace.homepage = springSpace.homepage || {                        default_list_order: 0,                        current_list: 170,                        current_btn_id: "s-lg-index-all-btn",                        current_num_cols: 1,                        current_type_label: ""                    };
                     jQuery(function() {      // Clear out the search term from previous search/back button.      jQuery("#s-lg-guide-search").val("");
