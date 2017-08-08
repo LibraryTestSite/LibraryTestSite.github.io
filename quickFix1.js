@@ -60,12 +60,17 @@ function siteSearch () {
     case 3:
       window.location.assign("http://lib.usfsp.edu/?s="+searchTerm);
       break;
+    case 3Alternate1:
+      window.location.assign("http://guides.nelson.usf.edu/RIHome/#s-lg-guide-search-terms?q="+searchTerm);
+      break;
+     case 3Alternate2:
+      window.location.assign("http://guides.nelson.usf.edu/RIHome/?q="+searchTerm);
+      break;  
     case 4:
       window.location.assign("http://digital.usfsp.edu/do/search/?q="+searchTerm);
       break;	
   }
 }
-
 
 $(".searchbox_sc .nav-tabs li").click(function () {
   $(this).parent().find("li").removeClass("active");
