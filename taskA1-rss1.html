@@ -24,10 +24,24 @@
        </section> 
       <section>
         <section>
-          <header>Example </header>
-          <h4><a href="http://www.htmlgoodies.com/beyond/javascript/stips/displaying-feed-content-using-jquery.html">Source</a></4> 
+          <h4><a href="http://www.htmlgoodies.com/beyond/javascript/stips/displaying-feed-content-using-jquery.html">Example Source</a></4> 
           <script>
-        d)){js=d.createElement(s);js.id=id;js.src=p+"://lgapi-us.libapps.com/widgets.php?site_id=5612&widget_type=8&output_format=1&widget_title=Testbox&widget_height=&widget_width=&widget_embed_type=1&guide_id=708414&box_id=15842108&map_id=18666239&content_only=0&config_id=1502217953472";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","s-lg-widget-script-1502217953472");</script>      
+        $.get("/feeds/newsfeed.php", function(data) {
+    var $XML = $(data);
+    $XML.find("item").each(function() {
+        var $this = $(this),
+            item = {
+                title:       $this.find("title").text(),
+                link:        $this.find("link").text(),
+                description: $this.find("description").text(),
+                pubDate:     $this.find("pubDate").text(),
+                author:      $this.find("author").text()
+            };
+        $('#content-div').append($('<h2/>').text(item.title));
+        //etc...
+    });
+});   
+
         </section>  
       <section>
         <header>Original Code Used in LibGuide</header>
