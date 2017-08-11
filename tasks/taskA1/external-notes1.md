@@ -1,16 +1,16 @@
-EXTERNAL RSS FEED FOR IMAGE CAROUSELS:  Notes using digital.usfsp.edu as an example.
+# EXTERNAL RSS FEED FOR IMAGE CAROUSELS:  Notes using digital.usfsp.edu as an example.
 
-1. Using digital.usfsp.edu as an example, the following url is the location of the xml data that's needed to capture the information to be displayed remotely:
+## 1. Using digital.usfsp.edu as an example, the following url is the location of the xml data that's needed to capture the information to be displayed remotely:
 
 http://digital.usfsp.edu/events/slidefeed.rss
 
 http://digital.usfsp.edu/slideshow/recent.rss
 
-2. If you want to be able to display images as well as text from digital.usfsp.edu, you must use the link,
+## 2. If you want to be able to display images as well as text from digital.usfsp.edu, you must use the link,
 
 http://digital.usfsp.edu/slideshow/recent.rss
 
-3. In the case of http://digital.usfsp.edu/slideshow/recent.rss, below is a sample block of the xml tags used to display the images in the rotating carousel.
+## 3. In the case of http://digital.usfsp.edu/slideshow/recent.rss, below is a sample block of the xml tags used to display the images in the rotating carousel.
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
 <channel>
