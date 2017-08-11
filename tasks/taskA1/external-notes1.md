@@ -12,6 +12,8 @@ http://digital.usfsp.edu/slideshow/recent.rss
 
 ## 3. In the case of http://digital.usfsp.edu/slideshow/recent.rss, below is a sample block of the xml tags used to display the images in the rotating carousel.
 
+```
+
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
 <channel>
 <title>USFSP Library Events</title>
@@ -40,3 +42,4 @@ Copyright (c) 2017 University of South Florida St. Petersburg All rights reserve
 <media:thumbnail url="http://digital.usfsp.edu/events/1004/fullsize.jpg"/>
 <media:title type="plain">USFSP Library Hosts Guide Dogs-in-Training</media:title>
 </item>
+```
