@@ -1,5 +1,6 @@
-
-
+/* The final version that ended up working from WordPress as of 11 Aug 2017 for case3
+ window.location.assign("http://guides.nelson.usf.edu/srch.php?q="+searchTerm);
+*/
 $(document).ready(function () {
 $("#header-search input").focus(function () {
   $(".topbox").css({"display":"block"});
