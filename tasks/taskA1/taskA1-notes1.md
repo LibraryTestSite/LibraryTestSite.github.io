@@ -5,6 +5,7 @@
 #### http://digital.usfsp.edu/recent.rsshttp://guides.nelson.usf.edu/RIHome/allguides
 #### https://api.jquery.com/jQuery.parseXML/
 #### https://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascriptTest OneRSS TitleXML Title
+#### view-source:http://digital.usfsp.edu/slideshow/recent.rss
 
 ## Test Two
 
