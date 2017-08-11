@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>jQuery Slider Example</title>
+<body>
+<!-- from cache as archived by Google on 11 Aug 2017 -->
+<!-- cache:http://www.peterhintondesign.co.uk/journal/jquery-rss-slider/  -->
+<!-- Note Author of the code is Peter Hinton Design from Peter Hinton Design -->
+JQUERY RSS SLIDER
+March 13, 2010
+A recent project of mine involved a website where the news feed was powered purely by RSS. To add some life to the news & events sections on the home page I created a slider that scrolls through the three latest entries using ‘the jFeed’ and ‘jQuery Flips’ plug-ins.
+You can view a demo here, or head to the bottom to get the source code.
+jQuery RSS Slider The script will loop through the latest 3 RSS entries
+STEP 1: THE HTML
+The HTML markup couldn’t be simpler. Copy and paste the following into your body tag and you are ready to add the JavaScript.
+
+ <div class="to-flips" id="news">
+
+    <h1>Latest News</h1>
+
+    <div class="content">
+        <div id="latestnews"></div>
+    </div>
+
+    <div class="flipnav"></div>
+
+</div>
+
+The classes and ID’s used are:
+‘to-flips’ – The container DIV for the jQuery Flips plug-in
+‘news’ – The DIV jQuery Flips assigned as the slider
+‘content’ – The inner DIV for jQuery Flips. Mainly used for styling.
+‘latestnews’ – The DIV jFeed populates with the RSS feed
+‘flipnav’ – The DIV jQuery Flips populates with ‘next’ & ‘previous’ buttons.
+‘block’ – Used in the jFeed JavaScript, each block contains one RSS item
+STEP 2: ADDING THE CSS & JAVASCRIPT
+There are several plug-ins available for jQuery that will parse RSS feeds, my personal favorite being jFeed. By default the jFeed script will only work with RSS feeds on the same domain, however there are numerous PHP proxy available if you need to parse an external file.
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<script type="text/javascript" 
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.jfeed.pack.js"></script>
+<script type="text/javascript" src="js/jquery.flips.min.js"></script>
+<script type="text/javascript">
+jQuery(function() {
+
+jQuery.getFeed({
+    // RSS path must be local unless using a proxy
+    url: 'rss/rss.xml',
+    success: function(feed) {
+            
+        var html = '';
+
+        // Selects how many RSS items to parse
+        for(var i = 0; i < feed.items.length && i < 3; i++) {
+            
+            var item = feed.items[i];
+            html += '<div class=block&#62'
+            // Gets the RSS link and title
+            + '<h3>' + '<a href="' + item.link + '">' + item.title 
+            + '</a>' + '</h3>';
+                
+            html += <div class="grey">'
+            // Gets the RSS pubDate
+            + item.updated
+            + '</div>'
+            // Gets the RSS description           
+            + item.description
+            + '</div>';
+        }
+        jQuery('#latestnews').append(html);
+
+        // Adds the Flips element. The direction can left, top or bottom     
+        $('#news').flips( { autorun_delay:1000, direction: 'right'});
+    }    
+    });
+});
+
+</script>
+</body>
+</html>
