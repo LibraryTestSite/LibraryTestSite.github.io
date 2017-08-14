@@ -1,0 +1,112 @@
+    tistics
+    Admin
+    Help
+
+    sharonaustin@mail.usf.edu
+    Logout
+
+    Nelson Poynter Memorial Library Research LibGuides 
+
+RSSTEST: External RSS
+RSSTEST
+
+    Home
+    External RSS
+      
+
+Test Flickr
+ 
+
+Test
+Aug 14, 2017
+JSONP Test 1
+ 
+
+JSONP Test Content 1
+Test Start
+In between scripts
+Test End
+Aug 14, 2017
+API Test 1
+ 
+
+Test for API use
+Aug 14, 2017
+Example RSS Widget ID 3475169
+ 
+
+    USFSP Library Hosts Guide Dogs-in-Training This link opens in a new windowAug 10, 2017
+
+    Keep an eye out around the library for Juno (4 months) and Conway (5 months) our on-site guide dogs-in-training. Valeria, a student worker and Steph, an Instructional Designer, and are both puppy raisers for the South-Eastern Guide Dogs organization.
+    Karla Kmetz Morris as USFSP Employee of the Month This link opens in a new windowAug 3, 2017
+
+    Congratulations to Karla Kmetz Morris, USFSP Employee of the Month!!!
+    Therapy Dogs, August 1st 3:30 - 4:30 This link opens in a new windowAug 2, 2017
+
+    Therapy Dogs at the USFSP library! 
+
+Website This link opens in a new window Feed This link opens in a new window
+Aug 11, 2017
+Add Box - Column 1
+Copy of Example RSS Widget ID 3475169 for Manipulation
+ 
+
+This section contains a code block for js source for carosel used in digital.usfsp.edu
+
+    USFSP Library Hosts Guide Dogs-in-Training This link opens in a new windowAug 10, 2017
+
+    Keep an eye out around the library for Juno (4 months) and Conway (5 months) our on-site guide dogs-in-training. Valeria, a student worker and Steph, an Instructional Designer, and are both puppy raisers for the South-Eastern Guide Dogs organization.
+    Karla Kmetz Morris as USFSP Employee of the Month This link opens in a new windowAug 3, 2017
+
+    Congratulations to Karla Kmetz Morris, USFSP Employee of the Month!!!
+    Therapy Dogs, August 1st 3:30 - 4:30 This link opens in a new windowAug 2, 2017
+
+    Therapy Dogs at the USFSP library! 
+
+Website This link opens in a new window Feed This link opens in a new window
+]]>
+Test code here Test test test
+ 
+Aug 14, 2017
+Add Box - Column 2
+Sharon Austin External Feed Notes
+ 
+
+EXTERNAL RSS FEED FOR IMAGE CAROUSELS:  Notes using digital.usfsp.edu as an example.
+
+1. Using digital.usfsp.edu as an example, the following url is the location of the xml data that's needed to capture the information to be displayed remotely:
+
+http://digital.usfsp.edu/events/slidefeed.rss
+
+2. In the case of http://digital.usfsp.edu/events/slidefeed.rss, below is a sample block of the xml tags.
+
+Information to be extracted from below code block: title, link, descrption, pubDate, guid, enclosure, media. 
+
+Reference block of code is below.
+<item>
+<title>USFSP Library Hosts Guide Dogs-in-Training</title>
+<link>http://digital.usfsp.edu/events/5</link>
+<description>
+<![CDATA[
+<img src="http://digital.usfsp.edu/events/1004/preview.jpg"> <p>Keep an eye out around the library for Juno (4 months) and Conway (5 months) our on-site guide dogs-in-training. Valeria, a student worker and <a href="http://library.usfsp.edu/staff-member/stephanie-fuhr/" >Steph</a>, an Instructional Designer, and are both puppy raisers for the South-Eastern Guide Dogs organization.</p>
+]]>
+</description>
+<pubDate>Thu, 10 Aug 2017 13:29:54 PDT</pubDate>
+<guid>http://digital.usfsp.edu/events/5</guid>
+<enclosure type="image/jpeg" url="http://digital.usfsp.edu/events/1004/fullsize.jpg" length="0"/>
+<media:content url="http://digital.usfsp.edu/events/1004/fullsize.jpg" type="image/jpeg" medium="image"/>
+<media:credit/>
+<media:thumbnail url="http://digital.usfsp.edu/events/1004/fullsize.jpg"/>
+<media:title type="plain">USFSP Library Hosts Guide Dogs-in-Training</media:title>
+</item>
+ 
+4. Default LibGuide widgets can do some of the heavy lifting of grabbing the xml feed and displaying it.
+ 
+However, the default version will display the images, but only as list items.   See "Example RSS Widget ID 3475169" to  for further explanation.  Additional JS/jQuery is needed to put them into a carousel.
+ 
+5. The location of the JavaScript/ jQuery used in the digital.usfsp.edu page are  
+ 
+"http://digital.usfsp.edu/assets/floatbox/modules/core_534.js  
+"http://digital.usfsp.edu/assets/scripts/bpbootstrap-20160726.pack.js"
+ 
+These js link have been added to the "Custom JS/CSS Code" area for RSS Tests, as well as, to the individual Example RSS Widget for manipulation..
