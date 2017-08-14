@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test JSONP 1</title>
+      <style>
+      body {
+      font-size: 12px;
+      font-family: Arial;
+      }
+     </style>
+ <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+  <body>
+  <script>
+  $(document).ready(function() {
+  $.ajax({
+    url: "http://query.yahooapis.com/v1/public/yql",
+    jsonp: "callback",
+  
+    // tell jQuery we're expecting JSONP
+    dataType: "jsonp",
+  
+    // tell YQL what we want and that we want JSON
+    data: {
+        q: "use 'http://github.com/yql/yql-tables/raw/master/weather/weather.bylocation.xml' as t_weather;"
+         + "select * from t_weather where location='ottawa,canada' and unit='c'",
+        format: "json"
+    },
+    success: function( response ) {
+      var channel = response.query.results.weather.rss.channel;
+      $('#weather').append($('<h2/>').text(channel.description));
+      $.each(channel, function(index, item){
+        if (item.description) { $('#weather').append($('<p/>').html(item.description)); }
+      });
+    }
+  });
+});
+  </script>
+  </body>
+  </html>
