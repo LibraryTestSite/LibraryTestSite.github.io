@@ -23,10 +23,17 @@ Description: If an ID is present the asset with that ID will be retrieved. Multi
 </section>
   <section>
    <h3>Example</h3>
-   <h4>Authentication Request</h4.
+   <h4>Authentication Request</h4>
    POST /1.2/oauth/token HTTP/1.1
     Host: lgapi-us.libapps.com
     client_id=250&client_secret=bca31c3811d383d7b1c582e3c435fc77&grant_type=client_credentials
+   <h4>Response</h4>
+   {
+    "access_token":"f65f53c20096e3dba63007e7dc8cbb539cf6e4bf",
+    "expires_in":3600,
+    "token_type":"Bearer",
+    "scope":"az_get az_create az_update"
+   }
   </section>
 </article>
 </body>
