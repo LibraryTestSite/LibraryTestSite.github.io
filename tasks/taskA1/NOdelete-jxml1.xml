@@ -4,76 +4,7 @@
 <slide>
 	<content>
 		<![CDATA[
-	
-
-<style>
-	.splash-controls
-{ 
-display:block; 
-height:2em; 
-margin:0 auto; 
-margin-top:1em; 
-}
-.splash-controls a
-{ display:block; 
-width:2em; 
-height:2em; 
-color:green; 
-background:rgb(51,51,51); /* Internet Explorer fallback color */      
-background:rgba(51,51,51,0.1);
-text-align:center; 
-line-height:2em; 
-float:left; 
-margin-right:0.5em; 
-text-decoration:none; 
-border-radius:1em;
--moz-border-radius:1em;
--webkit-border-radius: 1em;
-}
-.splash-controls a.selected	
-{ 
-color:#FFF;
-}	
-</style>
-	
-  <div class="splash" id="xmltest1">
-	<div class="splash-content">
-		XML Test 1 This will hold the content in place, be it one image or a lot of HTML
-		<?xml version="1.0" encoding="utf-8"?>
-<slideshow>
-
-<slide>
-	<content>
-		<![CDATA[
 	images, youtube videos, plain html, anything you like
-		]]>
-	</content>
-</slide>
-<slide>
-	<content>
-		<![CDATA[
-	images, youtube videos, plain html, anything you like
-		]]>
-	</content>
-</slide>
-
-</slideshow>
-	</div>
-	<div class="splash-controls">&nbsp;</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 		]]>
 	</content>
 </slide>
