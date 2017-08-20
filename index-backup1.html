@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library Tests</title>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+   <script>
+    $(document).ready(function(){
+     $.ajax({
+       type: "GET",
+       url: "data.xml",
+       dataType: "xml",
+       success: xmlParser
+      });
+    });
+    
+    function xmlParser(xml) {
+     $('#load').fadeOut(); 
+     $(xml).find("painting").each(function(){
+      $("#container").append('<div class="painting"><img src="images/' + $(this).find("image").text() + '" width="200" height="225" alt="' + $(this).find("title").text() + '" /><br/><div class="title"> + $(this).find("title").text() + '<br/>$' + $(this).find("price").text() + '</div></div>' );
+          $(".painting").fadeIn(1000);
+      });
+    }
+   </script> 
+  </head>
+  <body>
+   <div align="center">
+    <h1>Under Construction</h1>
+   </div>
+    <article>
+     <div id="container">
+      <div class="loader"><img src="Loading_icon.gif" id="load"></div>
+     </div>
+   </article> 
+  </body>
+</html>
+ 
+  
