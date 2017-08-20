@@ -19,6 +19,50 @@
       <div>
         <h1>Under Construction</h1>
       </div>
+    <!-- testing area starts here -->
+    <div>
+      <script>
+        function AwesomeSlider(selector,xml)
+{
+ 
+	// slider
+	var items = 0;
+	var content = new Array(10);
+	var control = '';
+	var count = 1;
+ 
+	$.get(xml, function(data)
+	{ // get contents from xml
+ 
+		$(data).find('slide').each(function()
+		{
+			// populate array
+			items++;
+			var $slide = $(this); 
+			content[items] = $slide.find('content').text();
+			// create controls
+			if(items==1) control = control + '<a href="#" class="selected" rel="'+items+'">'+items+'</a>';
+			else control = control + '<a href="#" rel="'+items+'">'+items+'</a>';
+		});
+ 
+		$(selector+' .splash-content').html(content[count]);
+ 
+		// add controls
+ 
+		$(selector+' .splash-controls').html(control);
+	});
+ 
+	// control is clicked
+	$(selector+' .splash-controls a').live('click',function (){
+		var slideID = $(this).attr('rel');
+		count = Slide2Next(selector,count,content,items,slideID);
+		return false;
+	});
+}
+      </script>    
+      
+    </div>
+    <!-- testing area ends here -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
