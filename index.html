@@ -20,7 +20,10 @@
     });
     
     function xmlParser(xml) {
-     $('#load').fadeOut();   
+     $('#load').fadeOut(); 
+     $(xml).find("painting").each(function(){
+      $("#container").append('<div class="painting"><img src="images/' + $(this).find("image").text() + '" width="200" height="225" alt="' + $(this).find("title").text() + '" /><br/><div class="title"> + $(this).find("title").text() + '<br/>$' + $(this).find("price").text() + '</div></div>' );
+      });
     }
    </script> 
   </head>
