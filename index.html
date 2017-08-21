@@ -27,6 +27,8 @@
       });
     }
     
+   //second test
+    
     $.get("http://digital.usfsp.edu/events/slidefeed.rss", function(data) {
     var $XML = $(data);
     $XML.find("item").each(function() {
@@ -40,6 +42,23 @@
             };
         $('#content-div').append($('<h2/>').text(item.title));
         //etc...
+    });
+});
+    
+   //third test
+    
+    $.get(rssurl, function(data) {
+    var $xml = $(data);
+    $xml.find("item").each(function() {
+        var $this = $(this),
+            item = {
+                title: $this.find("title").text(),
+                link: $this.find("link").text(),
+                description: $this.find("description").text(),
+                pubDate: $this.find("pubDate").text(),
+                author: $this.find("author").text()
+        }
+        //Do something with item here...
     });
 });
     
@@ -58,10 +77,14 @@
       <div class="loader" align="center"><img src="Loading_icon.gif" id="load"></div>
      </div>
    </article> 
-      <article>
+   <article>
     <!-- http://www.htmlgoodies.com/beyond/javascript/stips/displaying-feed-content-using-jquery.html -->
-    <div id="content-div">Second Test</div>
+    <div id="content-div" align="center">Second Test Content</div>
    </article>
+   <article>
+    <!-- https://stackoverflow.com/questions/226663/parse-rss-with-jquery -->
+    <div align="center">Third Test Content</div>
+   </article> 
   </body>
 </html>
  
