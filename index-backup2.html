@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library Tests</title>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+   <script>
+    $(document).ready(function(){
+     $.ajax({
+       type: "GET",
+       url: "http://digital.usfsp.edu/events/slidefeed.rss",
+       dataType: "xml",
+       success: xmlParser
+      });
+    });
+    
+    function xmlParser(xml) {
+     $('#load').fadeOut(); 
+     $(xml).find("painting").each(function(){
+      $("#container").append('<div class="painting"><img src="images/' + $(this).find("image").text() + '" width="200" height="225" alt="' + $(this).find("title").text() + '" /><br/><div class="title"> + $(this).find("title").text() + '<br/>$' + $(this).find("price").text() + '</div></div>' );
+          $(".painting").fadeIn(1000);
+      });
+    }
+    
+   //second test
+    
+    $.get("http://digital.usfsp.edu/events/slidefeed.rss", function(data) {
+    var $XML = $(data);
+    $XML.find("item").each(function() {
+        var $this = $(this),
+            item = {
+                title:       $this.find("title").text(),
+                link:        $this.find("link").text(),
+                description: $this.find("description").text(),
+                pubDate:     $this.find("pubDate").text(),
+                author:      $this.find("author").text()
+            };
+        $('#content-div').append($('<h2/>').text(item.title));
+        //etc...
+    });
+});
+    
+   //third test
+    
+    $.get(rssurl, function(data) {
+    var $xml = $(data);
+    $xml.find("item").each(function() {
+        var $this = $(this),
+            item = {
+                title: $this.find("title").text(),
+                link: $this.find("link").text(),
+                description: $this.find("description").text(),
+                pubDate: $this.find("pubDate").text(),
+                author: $this.find("author").text()
+        }
+        //Do something with item here...
+    });
+});
+    
+   </script> 
+  </head> 
+  <body>
+   <div align="center">
+    <h1>Under Construction</h1>
+   </div>
+   <!-- https://www.youtube.com/watch?v=ppzYGd0wi_c -->
+   <!-- https://stackoverflow.com/questions/10575079/parsing-xml-using-jquery-and-ajax -->
+   <!-- https://stackoverflow.com/questions/226663/parse-rss-with-jquery -->
+
+    <article>
+     <div id="container">
+      <div class="loader" align="center"><img src="Loading_icon.gif" id="load"></div>
+     </div>
+   </article> 
+   <article>
+    <!-- http://www.htmlgoodies.com/beyond/javascript/stips/displaying-feed-content-using-jquery.html -->
+    <div id="content-div" align="center">Second Test Content</div>
+   </article>
+   <article>
+    <!-- https://stackoverflow.com/questions/226663/parse-rss-with-jquery -->
+    <div align="center">Third Test Content</div>
+   </article> 
+  </body>
+</html>
+ 
+   
