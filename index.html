@@ -46,8 +46,8 @@
 });
     
    //third test
-    
-    $.get(rssurl, function(data) {
+    //$.get(rssurl, function(data) {
+    $.get("http://digital.usfsp.edu/events/slidefeed.rss", function(data) {
     var $xml = $(data);
     $xml.find("item").each(function() {
         var $this = $(this),
